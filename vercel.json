@@ -3,14 +3,14 @@
     "name": "ai-express",
     "builds": [
         { 
-            "src": "server.ts", 
+            "src": "./server.ts", 
             "use": "@vercel/node" 
         }
     ],
     "routes": [
         { 
             "src": "/(.*)", 
-            "dest": "server.ts" 
+            "dest": "/" 
         }
     ]
 }
