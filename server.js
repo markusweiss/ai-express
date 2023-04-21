@@ -11,6 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('Hello AI!')
+})
+
 app.post('/completions', async(req, res) => {
 
     const options = {
@@ -22,7 +26,7 @@ app.post('/completions', async(req, res) => {
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
             messages: [{ role: "user", content: req.body.message}],
-            max_tokens: 300,
+            max_tokens: 200,
         })
     }
 
